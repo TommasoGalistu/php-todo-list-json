@@ -13,6 +13,14 @@ if(isset($_POST['toDo'])){
 
     file_put_contents('todo-list.json', json_encode($data));
 }
+// logica per eliminazione file
+if(isset($_POST['eliminate'])){
+    $eliminateItem = $_POST['eliminate'];
+
+    array_splice($data, $eliminateItem, 1);
+
+    file_put_contents('todo-list.json', json_encode($data));
+}
 
 
 

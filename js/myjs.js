@@ -11,20 +11,31 @@ createApp({
   },
   methods: {
     addTask() {
-      let item = {
-        title: `${this.text}`,
-        description: `${this.description}`,
-        isComplete: false,
+      if (this.text.trim()) {
+        let item = {
+          title: `${this.text}`,
+          description: `${this.description.trim()}`,
+          isComplete: false,
+        };
+        const dataUpdata = {
+          toDo: item,
+        };
+        axios.post(this.server, dataUpdata, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+        this.toDoData.push(item);
+        this.text = "";
+        this.description = "";
+      }
+    },
+    eliminateTask(index) {
+      let data = {
+        eliminate: index,
       };
-      const dataUpdata = {
-        toDo: item,
-      };
-      axios.post(this.server, dataUpdata, {
+      axios.post(this.server, data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      this.toDoData.push(item);
-      this.text = "";
-      this.description = "";
+      this.toDoData.splice(index, 1);
     },
     getApi() {
       axios

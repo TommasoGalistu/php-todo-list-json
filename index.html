@@ -42,12 +42,15 @@
               <div class="col p-3 sfondo">
                 <ul>
                   <li
-                    v-for="element in toDoData"
+                    v-for="(element, index) in toDoData"
                     class="d-flex justify-content-between"
                   >
                     <span>{{element.title}}</span>
                     <div class="contButton">
-                      <i class="fa-solid fa-trash-can"></i>
+                      <i
+                        @click="eliminateTask(index)"
+                        class="fa-solid fa-trash-can"
+                      ></i>
                       <i class="fa-solid fa-eye"></i>
                     </div>
                   </li>
