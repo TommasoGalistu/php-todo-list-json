@@ -6,21 +6,29 @@ createApp({
       toDoData: [],
       text: "",
       description: "",
+      server: "server/server.php",
     };
   },
   methods: {
     addTask() {
-      this.toDoData.push({
+      let item = {
         title: `${this.text}`,
         description: `${this.description}`,
         isComplete: false,
+      };
+      const dataUpdata = {
+        toDo: item,
+      };
+      axios.post(this.server, dataUpdata, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
+      this.toDoData.push(item);
       this.text = "";
       this.description = "";
     },
-    chiamata() {
+    getApi() {
       axios
-        .get("server/server.php")
+        .get(this.server)
         .then((response) => {
           this.toDoData = response.data;
         })
@@ -30,6 +38,6 @@ createApp({
     },
   },
   mounted() {
-    this.chiamata();
+    this.getApi();
   },
 }).mount("#app");

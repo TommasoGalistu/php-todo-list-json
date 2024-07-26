@@ -6,7 +6,13 @@ $stringaDati = file_get_contents('todo-list.json');
 $data = json_decode($stringaDati);
 
 // logica per la ricezione js
+if(isset($_POST['toDo'])){
+    $toDoItem = $_POST['toDo'];
 
+    $data[] = $toDoItem;
+
+    file_put_contents('todo-list.json', json_encode($data));
+}
 
 
 
