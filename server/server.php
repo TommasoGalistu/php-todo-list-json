@@ -1,16 +1,18 @@
 <?php
 
-// OBIETTIVO: dato un testo, aggiungere
-// una nuova todo al nostro """database"""
+// prendo il file json e lo salvo come stringa
+$stringaDati = file_get_contents('todo-list.json');
+// transformo una stringa in un elemento php
+$data = json_decode($stringaDati);
 
-// 1. prendere l'informazione che ci arriva dalla chiamata
-// 2. prendere la lista json delle todo dal """database"""
-// 3. trasformarla in una struttura dati che php può usare (array)
+// logica per la ricezione js
 
-// 4. aggiungere la nuova todo
 
-// 5. trasformare l'array in json (la struttura dati "universale")
 
-// 7. salvare il nuovo json nel nostro """database"""
 
-// 8. restituire il json
+
+// restituire il json che verrà letto da json_decode
+header('Content-Type: application/json');
+// stampa elemento php sotto forma di string
+echo json_encode($data);
+
