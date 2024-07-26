@@ -1,12 +1,10 @@
 [
   {
-    "id": 0,
     "title": "cosa devo fare",
     "description": "ulteriori informazioni su quello che devo fare",
     "isComplete": false
   },
   {
-    "id": 1,
     "title": "cosa devo fare",
     "description": "",
     "isComplete": false
