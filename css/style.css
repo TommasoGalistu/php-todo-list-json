@@ -47,6 +47,11 @@ textarea {
 
 .done {
   text-decoration-line: line-through;
-  color: red;
-  font-size: 2rem;
+}
+
+.fa-trash-can {
+  display: none;
+}
+.visible {
+  display: inline-block;
 }
