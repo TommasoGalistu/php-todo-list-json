@@ -44,3 +44,9 @@ input:focus {
 textarea {
   padding: 1rem;
 }
+
+.done {
+  text-decoration-line: line-through;
+  color: red;
+  font-size: 2rem;
+}

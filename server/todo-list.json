@@ -1,1 +1,8 @@
-[{"title":"php","description":"ulteriori informazioni su quello che devo fare","isComplete":false},{"title":"js","description":"","isComplete":false}]
+[
+  {
+    "title": "php",
+    "description": "ulteriori informazioni su quello che devo fare",
+    "isComplete": false
+  },
+  { "title": "js", "description": "", "isComplete": true }
+]
