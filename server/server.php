@@ -8,7 +8,9 @@ $data = json_decode($stringaDati);
 // logica per la ricezione js
 if(isset($_POST['toDo'])){
     $toDoItem = $_POST['toDo'];
-
+    if (isset($toDoItem['isComplete'])) {
+        $toDoItem['isComplete'] = ($toDoItem['isComplete'] === 'true' || $toDoItem['isComplete'] === true) ? true : false;
+    }
     $data[] = $toDoItem;
 
     file_put_contents('todo-list.json', json_encode($data));
@@ -18,6 +20,13 @@ if(isset($_POST['eliminate'])){
     $eliminateItem = $_POST['eliminate'];
 
     array_splice($data, $eliminateItem, 1);
+
+    file_put_contents('todo-list.json', json_encode($data));
+}
+if(isset($_POST['changeStatus'])){
+    $changeStatus = $_POST['changeStatus'];
+
+    $data[$changeStatus]->isComplete = $data[$changeStatus]->isComplete ? false : true;
 
     file_put_contents('todo-list.json', json_encode($data));
 }

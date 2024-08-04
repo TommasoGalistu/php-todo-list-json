@@ -45,12 +45,14 @@
                     v-for="(element, index) in toDoData"
                     class="d-flex justify-content-between"
                   >
-                    <span :class="{ done: element.isComplete}"
+                    <span
+                      @click="changeStatus(index)"
+                      :class="{ done: element.isComplete}"
                       >{{element.title}}</span
                     >
                     <div class="contButton">
                       <i
-                        @click="eliminateTask(index)"
+                        @click.stop="eliminateTask(index)"
                         class="fa-solid fa-trash-can"
                         :class="[element.isComplete ? 'visible' : '']"
                       ></i>

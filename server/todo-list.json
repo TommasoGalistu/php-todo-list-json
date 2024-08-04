@@ -4,5 +4,6 @@
     "description": "ulteriori informazioni su quello che devo fare",
     "isComplete": false
   },
-  { "title": "js", "description": "", "isComplete": true }
+  { "title": "js", "description": "", "isComplete": true },
+  { "title": "CIAO", "description": "", "isComplete": false }
 ]
