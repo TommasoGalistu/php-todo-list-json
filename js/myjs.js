@@ -11,7 +11,6 @@ createApp({
   },
   methods: {
     cambiaBoleano(index) {
-      console.log(index);
       let data = {
         changeStatus: index,
       };
@@ -96,3 +95,19 @@ createApp({
     this.getApi();
   },
 }).mount("#app");
+//  {
+//   "title": "php",
+//   "description": "studiare php e ripassare le lezioni",
+//   "isComplete": false
+// },
+// {
+//   "title": "js",
+//   "description": "ripassare js e le lezioni passate",
+//   "isComplete": true
+// },
+// { "title": "leggere", "description": "", "isComplete": false },
+// {
+//   "title": "consultare blog",
+//   "description": "cercare qualche blog per approfondire qualche argomento",
+//   "isComplete": false
+// }

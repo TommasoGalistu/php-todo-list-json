@@ -15,8 +15,9 @@ $data = $_POST['descrizione'];
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/pageDescription.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
     <title>Document</title>
 </head>
 <body>

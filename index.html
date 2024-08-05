@@ -37,9 +37,9 @@
         <div class="container">
           <div class="row">
             <h1 class="text-center">Todo List</h1>
-            <div class="row">
+            <div class="row altezze">
               <div class="col p-3 sfondo">
-                <ul>
+                <ul v-if="toDoData[0]">
                   <li
                     v-for="(element, index) in toDoData"
                     :key="index"
@@ -65,15 +65,20 @@
                     </div>
                   </li>
                 </ul>
+                <h2 class="text-center" v-else>
+                  Hai effettuato tutti i tuoi task
+                </h2>
                 <div class="d-flex ms-2 me-2">
                   <input
                     @keyup.enter.stop="addTask"
                     v-model="text"
                     type="text"
+                    placeholder="Titolo task"
                   />
                   <textarea
                     @keyup.enter.stop="addTask"
                     v-model="description"
+                    placeholder="Descrizione task"
                   ></textarea>
                   <button
                     @click.stop="addTask"
