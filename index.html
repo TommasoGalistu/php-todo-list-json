@@ -28,7 +28,6 @@
     />
     <!-- vue cdn -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
     <!-- link css -->
     <link href="css/style.css" rel="stylesheet" />
   </head>
@@ -43,12 +42,12 @@
                 <ul>
                   <li
                     v-for="(element, index) in toDoData"
+                    :key="index"
                     class="d-flex justify-content-between"
+                    @click="cambiaBoleano(index)"
                   >
-                    <span
-                      @click="changeStatus(index)"
-                      :class="{ done: element.isComplete}"
-                      >{{element.title}}</span
+                    <span :class="{ done: element.isComplete }"
+                      >{{ element.title }}</span
                     >
                     <div class="contButton">
                       <i
@@ -61,16 +60,17 @@
                   </li>
                 </ul>
                 <div class="d-flex ms-2 me-2">
-                  <input @keyup.enter="addTask()" v-model="text" type="text" />
+                  <input
+                    @keyup.enter.stop="addTask"
+                    v-model="text"
+                    type="text"
+                  />
                   <textarea
-                    @keyup.enter="addTask()"
+                    @keyup.enter.stop="addTask"
                     v-model="description"
-                    name=""
-                    id=""
                   ></textarea>
-
                   <button
-                    @click="addTask()"
+                    @click.stop="addTask"
                     class="btn btn-outline-secondary ms-1"
                   >
                     Button

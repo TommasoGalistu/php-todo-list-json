@@ -10,7 +10,8 @@ createApp({
     };
   },
   methods: {
-    changeStatus(index) {
+    cambiaBoleano(index) {
+      console.log(index);
       let data = {
         changeStatus: index,
       };
@@ -24,7 +25,7 @@ createApp({
             : true;
         })
         .catch((error) => {
-          console.error("Error eliminating task:", error);
+          console.error("Error changing task status:", error);
         });
     },
     addTask() {
@@ -66,7 +67,6 @@ createApp({
           console.error("Error eliminating task:", error);
         });
     },
-
     getApi() {
       axios
         .get(this.server)
