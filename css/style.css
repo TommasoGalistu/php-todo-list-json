@@ -62,3 +62,9 @@ textarea {
 .visible {
   display: inline-block;
 }
+
+span,
+.fa-trash-can,
+.fa-eye {
+  cursor: pointer;
+}
