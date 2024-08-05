@@ -28,6 +28,20 @@ createApp({
           console.error("Error changing task status:", error);
         });
     },
+    showDescription(index) {
+      let form = document.createElement("form");
+      form.method = "POST";
+      form.action = "./otherPage/descriptionTask.php";
+
+      let input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "descrizione";
+      input.value = this.toDoData[index].description;
+      form.appendChild(input);
+
+      document.body.appendChild(form);
+      form.submit();
+    },
     addTask() {
       if (this.text.trim()) {
         let item = {

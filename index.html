@@ -44,9 +44,10 @@
                     v-for="(element, index) in toDoData"
                     :key="index"
                     class="d-flex justify-content-between"
-                    @click="cambiaBoleano(index)"
                   >
-                    <span :class="{ done: element.isComplete }"
+                    <span
+                      @click="cambiaBoleano(index)"
+                      :class="{ done: element.isComplete }"
                       >{{ element.title }}</span
                     >
                     <div class="contButton">
@@ -55,7 +56,12 @@
                         class="fa-solid fa-trash-can"
                         :class="[element.isComplete ? 'visible' : '']"
                       ></i>
-                      <i class="fa-solid fa-eye"></i>
+                      <i
+                        @click="showDescription(index)"
+                        v-if="element.description"
+                        class="fa-solid fa-eye"
+                      ></i>
+                      <i v-else class="fa-solid fa-eye-slash"></i>
                     </div>
                   </li>
                 </ul>

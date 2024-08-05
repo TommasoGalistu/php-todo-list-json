@@ -53,6 +53,7 @@ textarea {
   display: none;
   padding-right: 0.5rem;
 }
+
 .visible {
   display: inline-block;
 }

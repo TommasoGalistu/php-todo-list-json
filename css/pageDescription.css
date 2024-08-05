@@ -1,0 +1,20 @@
+body {
+  background-color: black;
+  color: white;
+}
+a {
+  color: white;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: grey;
+  text-decoration: none;
+}
+.box {
+  width: 70%;
+  margin: auto;
+}
+.testo {
+  border: 1px solid white;
+  margin: 1rem;
+  padding: 1rem;
+}
